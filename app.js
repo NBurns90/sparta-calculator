@@ -17,8 +17,10 @@ if (calctype == 1) {
     alert("You will now be asked in which units you'd like to input.  You will then be asked for your weight and height")
   }
   else if (calctype == 4) {
-    alert("You have selected the Trip Calculator")
-    alert("You will now be required to enter Distance, MPG, CostPerGallon, Speed")
+    alert('Sorry, this feature has not been implemented')
+    throw TerminationError
+    // alert("You have selected the Trip Calculator")
+    // alert("You will now be required to enter Distance, MPG, CostPerGallon, Speed")
   }
   else {
     alert("You have not entered a valid Calculator type!")
@@ -69,8 +71,9 @@ if (calctype == 1) {
       throw InvalidInputError
     }
   }
-  else { (calctype) ==4
+  else { (calctype) == 4
     // Trip Calculator
+    throw TerminationError
   }
 
 // Basic Calculator Functionality and Results
@@ -80,20 +83,25 @@ var result;
 if (calctype == 1) {
   if (operation_input === "*") {
       result = (num1 * num2);
+      alert(num1 + ' x ' + num2 + ' = ' + result);
       console.log(num1, operation_input, num2);
   } else if (operation_input === "/") {
       result = (num1 / num2);
+      alert(num1 + ' / ' + num2 + ' = ' + result);
       console.log(num1, operation_input, num2);
   } else if (operation_input === "+") {
       result = (num1 + num2);
+      alert(num1 + ' + ' + num2 + ' = ' + result);
       console.log(num1, operation_input, num2);
   } else if (operation_input === "-"){
       result = (num1 - num2);
+      alert(num1 + ' - ' + num2 + ' = ' + result);
       console.log(num1, operation_input, num2);
   } else {
       alert("You haven't entered a vaild operation!")
       throw InvalidOperationError
   }
+  alert("The result is " + result)
   console.log(result);
 }
 
@@ -101,10 +109,12 @@ if (calctype == 1) {
   else if (calctype == 2) {
     if (function_input == 1) {
       result = Math.sqrt(num1);
+      alert('The Square Root of ' + num1 + ' is ' + result);
       console.log(num1);
     }
     else {
       result = Math.pow(num1, num2);
+      alert(num1 + ' to the power of ' + num2 + ' is ' + result);
       console.log(num1, num2);
     }
     console.log(result);
@@ -119,18 +129,21 @@ if (calctype == 1) {
       bmi = (weight/(Math.pow(height, 2)))*703.0704;
     }
     if (bmi < 18.5) {
+      alert('Your BMI is ' + bmi + ' and you need to eat more');
       console.log("You need to eat more!");
       console.log(bmi);
       console.log(height);
       console.log(weight);
     }
     else if (bmi <=24) {
+      alert('Your BMI is ' + bmi + ' and you are a healthy weight');
       console.log("You're a healthy weight");
       console.log(bmi);
       console.log(height);
       console.log(weight);
     }
     else {
+      alert('Your BMI is ' + bmi + ' and you are going to die');
       console.log("You're going to die soon");
       console.log(bmi);
       console.log(height);
